@@ -13,10 +13,14 @@ function RQUsers() {
   const { data, isLoading, isError, error, isFetching } = useQuery({
     queryKey: ["users"],
     queryFn: () => {
-      return axios.get("http://localhost:4000/users1");
+      return axios.get("http://localhost:4000/users");
     },
     onSuccess,
-    onError
+    onError,
+    select: (data) => {
+      const userNames = data.data.map(user => user.name)
+      return userNames
+    }
   });
 
   console.log({isLoading, isFetching})
@@ -29,11 +33,16 @@ function RQUsers() {
     return <h2>{error.message}</h2>;
   }
 
+  console.log('data', data)
+
   return (
     <>
       <h2>RQ Users Page</h2>
-      {data?.data.map((user) => {
+      {/* {data?.data.map((user) => {
         return <div key={user.id}>{user.name}</div>;
+      })} */}
+      {data.map(userName => {
+        return <div key={userName}>{userName}</div>
       })}
     </>
   );
