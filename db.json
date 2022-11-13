@@ -15,5 +15,19 @@
       "name": "Ngo Ngoc Nhan",
       "ldap": "nnnhan"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Ho Thi Bich Ngoc"
+    },
+    {
+      "id": 2,
+      "name": "Ngo Ngoc Nam Tran"
+    },
+    {
+      "id": 3,
+      "name": "Truong Hoai Phu"
+    }
   ]
 }
