@@ -10,6 +10,7 @@ import RQUsers from "./components/RQUsers";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import RQUser from "./components/RQUser";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/users" element={<Users />} />
             <Route path="/rq-users" element={<RQUsers />} />
+            <Route path="/rq-users/:userId" element={<RQUser />} />
           </Routes>
         </div>
       </Router>

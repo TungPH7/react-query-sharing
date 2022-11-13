@@ -1,19 +1,30 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-const fetchUsers = () => {
-  return axios.get("http://localhost:4000/users");
+const fetchUser = (userId) => {
+  return axios.get(`http://localhost:4000/users/${userId}`);
 };
 
-export const useUserData = (onSuccess, onError) => {
+export const useUserData = (userId) => {
   return useQuery({
-    queryKey: ["users"],
-    queryFn: fetchUsers,
-    onSuccess,
-    onError,
-    select: (data) => {
-      const userNames = data.data.map((user) => user.name);
-      return userNames;
-    },
+    queryKey: ["user", userId],
+    queryFn: () => fetchUser(userId),
   });
 };
+
+// import axios from "axios";
+// import { useQuery } from "@tanstack/react-query";
+
+// const fetchUser = (obj) => {
+//   console.log('obj', obj)
+
+//   const userId = obj.queryKey[1]
+//   return axios.get(`http://localhost:4000/users/${userId}`);
+// };
+
+// export const useUserData = (userId) => {
+//   return useQuery({
+//     queryKey: ["user", userId],
+//     queryFn: fetchUser,
+//   });
+// };
