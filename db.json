@@ -29,5 +29,17 @@
       "id": 3,
       "name": "Truong Hoai Phu"
     }
+  ],
+  "members": [
+    {
+      "id": "phtung@cmcglobal.vn",
+      "ldap": "phtung"
+    }
+  ],
+  "membersHobbies": [
+    {
+      "id": "phtung",
+      "hobbies": ["travel", "music", "game"]
+    }
   ]
 }

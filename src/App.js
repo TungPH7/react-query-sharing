@@ -13,6 +13,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import RQUser from "./components/RQUser";
 import ParallelQueries from "./components/ParallelQueries";
 import DynamicParallel from "./components/DynamicParallel";
+import DependentQueries from "./components/DependentQueries";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +26,7 @@ function App() {
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/users">Traditional Users</NavLink>
             </li>
             <li>
@@ -37,6 +38,11 @@ function App() {
             <li>
               <NavLink to="/rq-dynamic-parallel">
                 React Query Dynamic Parallel
+              </NavLink>
+            </li> */}
+            <li>
+              <NavLink to="/rq-dependent">
+                Dependent Queries
               </NavLink>
             </li>
           </ul>
@@ -51,6 +57,10 @@ function App() {
             <Route
               path="/rq-dynamic-parallel"
               element={<DynamicParallel userIds={[1, 2]} />}
+            />
+            <Route
+              path="/rq-dependent"
+              element={<DependentQueries email="phtung@cmcglobal.vn" />}
             />
           </Routes>
         </div>

@@ -14,12 +14,10 @@ nav ul li {
 
 nav ul li a {
   color: #fff;
-  text-decoration: none;
 }
 
 nav ul li a.active {
   color: #dff305;
-  text-decoration: underline;
 }
 
 .app {
