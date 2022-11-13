@@ -1,29 +1,22 @@
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import { useUserData } from "../hooks/useUserData";
 
 function RQUsers() {
   const onSuccess = (data) => {
-    console.log('Do somthing after data fetching')
-  }
+    console.log("Do somthing after data fetching");
+  };
 
   const onError = (error) => {
-    console.log('Do somthing after encountering error')
-  }
+    console.log("Do somthing after encountering error");
+  };
 
-  const { data, isLoading, isError, error, isFetching } = useQuery({
-    queryKey: ["users"],
-    queryFn: () => {
-      return axios.get("http://localhost:4000/users");
-    },
+  const { data, isLoading, isError, error, isFetching } = useUserData(
     onSuccess,
-    onError,
-    select: (data) => {
-      const userNames = data.data.map(user => user.name)
-      return userNames
-    }
+    onError
+  );
+  console.log({
+    isLoading,
+    isFetching,
   });
-
-  console.log({isLoading, isFetching})
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -33,16 +26,14 @@ function RQUsers() {
     return <h2>{error.message}</h2>;
   }
 
-  console.log('data', data)
-
   return (
     <>
       <h2>RQ Users Page</h2>
       {/* {data?.data.map((user) => {
         return <div key={user.id}>{user.name}</div>;
       })} */}
-      {data.map(userName => {
-        return <div key={userName}>{userName}</div>
+      {data.map((userName) => {
+        return <div key={userName}>{userName}</div>;
       })}
     </>
   );
