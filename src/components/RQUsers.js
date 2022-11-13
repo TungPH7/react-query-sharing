@@ -7,7 +7,9 @@ function RQUsers() {
     queryFn: () => {
       return axios.get("http://localhost:4000/users");
     },
-    staleTime: 1000*10
+    // refetchOnWindowFocus: false
+    // refetchInterval: 1000*2,
+    // refetchIntervalInBackground: true
   });
 
   console.log({isLoading, isFetching})
