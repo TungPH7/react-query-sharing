@@ -26,25 +26,25 @@ function App() {
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink to="/users">Traditional Users</NavLink>
             </li>
             <li>
               <NavLink to="/rq-users">React Query Users</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/rq-parallel">React Query Parallel</NavLink>
             </li>
             <li>
               <NavLink to="/rq-dynamic-parallel">
                 React Query Dynamic Parallel
               </NavLink>
-            </li> */}
+            </li>
             <li>
               <NavLink to="/rq-dependent">
                 Dependent Queries
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </nav>
         <div className="app">
