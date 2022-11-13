@@ -2,13 +2,16 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 function RQUsers() {
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error, isFetching } = useQuery({
     queryKey: ["users"],
     queryFn: () => {
       return axios.get("http://localhost:4000/users");
     },
+    staleTime: 1000*10
   });
-  console.log("error", error);
+
+  console.log({isLoading, isFetching})
+
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
