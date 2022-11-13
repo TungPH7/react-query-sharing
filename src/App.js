@@ -15,6 +15,7 @@ import ParallelQueries from "./components/ParallelQueries";
 import DynamicParallel from "./components/DynamicParallel";
 import DependentQueries from "./components/DependentQueries";
 import PaginatedQueries from "./components/PaginatedQueries";
+import InfiniteQueries from "./components/InfiniteQueries";
 
 const queryClient = new QueryClient();
 
@@ -30,10 +31,10 @@ function App() {
             <li>
               <NavLink to="/users">Traditional Users</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/rq-users">React Query Users</NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink to="/rq-parallel">React Query Parallel</NavLink>
             </li>
             <li>
@@ -45,9 +46,12 @@ function App() {
               <NavLink to="/rq-dependent">
                 Dependent Queries
               </NavLink>
-            </li> */}
+            </li>
             <li>
               <NavLink to="/rq-paginated">React Query Paginated</NavLink>
+            </li> */}
+            <li>
+              <NavLink to="/rq-infinite">React Query Infinite Queries</NavLink>
             </li>
           </ul>
         </nav>
@@ -67,6 +71,7 @@ function App() {
               element={<DependentQueries email="phtung@cmcglobal.vn" />}
             />
             <Route path="/rq-paginated" element={<PaginatedQueries />} />
+            <Route path="/rq-infinite" element={<InfiniteQueries />} />
           </Routes>
         </div>
       </Router>
