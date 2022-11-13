@@ -8,31 +8,36 @@ import HomePage from "./components/Home";
 import Users from "./components/Users";
 import RQUsers from "./components/RQUsers";
 import "./App.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/users">Traditional Users</NavLink>
-          </li>
-          <li>
-            <NavLink to="/rq-users">React Query Users</NavLink>
-          </li>
-        </ul>
-      </nav>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/rq-users" element={<RQUsers />} />
-        </Routes>
-      </div>
-    </Router>
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/users">Traditional Users</NavLink>
+            </li>
+            <li>
+              <NavLink to="/rq-users">React Query Users</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/rq-users" element={<RQUsers />} />
+          </Routes>
+        </div>
+      </Router>
+    </QueryClientProvider>
   );
 }
 
