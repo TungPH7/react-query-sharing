@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Tran Kim Vinh",
+      "ldap": "tkvinh"
+    },
+    {
+      "id": 2,
+      "name": "Tran Dinh Phuong",
+      "ldap": "tdphuong"
+    },
+    {
+      "id": 3,
+      "name": "Ngo Ngoc Nhan",
+      "ldap": "nnnhan"
+    }
+  ]
+}
