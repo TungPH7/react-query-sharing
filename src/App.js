@@ -14,6 +14,7 @@ import RQUser from "./components/RQUser";
 import ParallelQueries from "./components/ParallelQueries";
 import DynamicParallel from "./components/DynamicParallel";
 import DependentQueries from "./components/DependentQueries";
+import PaginatedQueries from "./components/PaginatedQueries";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,9 @@ function App() {
                 Dependent Queries
               </NavLink>
             </li> */}
+            <li>
+              <NavLink to="/rq-paginated">React Query Paginated</NavLink>
+            </li>
           </ul>
         </nav>
         <div className="app">
@@ -62,6 +66,7 @@ function App() {
               path="/rq-dependent"
               element={<DependentQueries email="phtung@cmcglobal.vn" />}
             />
+            <Route path="/rq-paginated" element={<PaginatedQueries />} />
           </Routes>
         </div>
       </Router>
