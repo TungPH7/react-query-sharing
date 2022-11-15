@@ -31,10 +31,10 @@ function App() {
             <li>
               <NavLink to="/users">Traditional Users</NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink to="/rq-users">React Query Users</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/rq-parallel">React Query Parallel</NavLink>
             </li>
             <li>
@@ -49,10 +49,10 @@ function App() {
             </li>
             <li>
               <NavLink to="/rq-paginated">React Query Paginated</NavLink>
-            </li> */}
+            </li>
             <li>
               <NavLink to="/rq-infinite">React Query Infinite Queries</NavLink>
-            </li>
+            </li> */}
           </ul>
         </nav>
         <div className="app">

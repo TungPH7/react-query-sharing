@@ -1,9 +1,13 @@
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
 
 const fetchUsers = () => {
   return axios.get("http://localhost:4000/users");
 };
+
+const addUserData = (hero) => {
+  return axios.post("http://localhost:4000/users", hero)
+}
 
 export const useUsersData = (onSuccess, onError) => {
   return useQuery({
@@ -17,3 +21,7 @@ export const useUsersData = (onSuccess, onError) => {
     // },
   });
 };
+
+export const useAddUserData = () =>{
+  return useMutation(addUserData)
+}
