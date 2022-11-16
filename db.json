@@ -19,6 +19,11 @@
       "name": "Phung Huu Tung",
       "ldap": "phtung",
       "id": 4
+    },
+    {
+      "name": "Truong Hoai Phu",
+      "ldap": "thphu",
+      "id": 5
     }
   ],
   "friends": [

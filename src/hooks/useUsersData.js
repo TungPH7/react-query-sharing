@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 const fetchUsers = () => {
   return axios.get("http://localhost:4000/users");
@@ -23,5 +23,10 @@ export const useUsersData = (onSuccess, onError) => {
 };
 
 export const useAddUserData = () =>{
-  return useMutation(addUserData)
+  const queryClient = useQueryClient()
+  return useMutation(addUserData, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('users')
+    }
+  })
 }
