@@ -24,6 +24,26 @@
       "name": "Truong Hoai Phu",
       "ldap": "thphu",
       "id": 5
+    },
+    {
+      "name": "Nguyen Dinh Nhat",
+      "ldap": "ndnhat",
+      "id": 6
+    },
+    {
+      "name": "Nguyen Van A",
+      "ldap": "nva",
+      "id": 7
+    },
+    {
+      "name": "Nguyen Van b",
+      "ldap": "nvb",
+      "id": 8
+    },
+    {
+      "name": "Nguyen Van C",
+      "ldap": "nvc",
+      "id": 9
     }
   ],
   "friends": [

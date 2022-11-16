@@ -25,8 +25,14 @@ export const useUsersData = (onSuccess, onError) => {
 export const useAddUserData = () =>{
   const queryClient = useQueryClient()
   return useMutation(addUserData, {
-    onSuccess: () => {
-      queryClient.invalidateQueries('users')
+    onSuccess: (data) => {
+      // queryClient.invalidateQueries('users')
+      queryClient.setQueryData(['users'], (oldQueryData) => {
+        return {
+          ...oldQueryData,
+          data: [...oldQueryData.data, data.data]
+        }
+      })
     }
   })
 }
