@@ -14,46 +14,6 @@
       "id": 3,
       "name": "Ngo Ngoc Nhan",
       "ldap": "nnnhan"
-    },
-    {
-      "name": "Phung Huu Tung",
-      "ldap": "phtung",
-      "id": 4
-    },
-    {
-      "name": "Truong Hoai Phu",
-      "ldap": "thphu",
-      "id": 5
-    },
-    {
-      "name": "Nguyen Dinh Nhat",
-      "ldap": "ndnhat",
-      "id": 6
-    },
-    {
-      "name": "Nguyen Van A",
-      "ldap": "nva",
-      "id": 7
-    },
-    {
-      "name": "Nguyen Van b",
-      "ldap": "nvb",
-      "id": 8
-    },
-    {
-      "name": "Nguyen Van C",
-      "ldap": "nvc",
-      "id": 9
-    },
-    {
-      "name": "Nguyen Van D",
-      "ldap": "nvd",
-      "id": 10
-    },
-    {
-      "name": "Nguyen Van E",
-      "ldap": "nve",
-      "id": 11
     }
   ],
   "friends": [

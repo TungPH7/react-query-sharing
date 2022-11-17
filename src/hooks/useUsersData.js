@@ -1,12 +1,14 @@
-import axios from "axios";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { request } from "../utils/axios-utils";
 
 const fetchUsers = () => {
-  return axios.get("http://localhost:4000/users");
+  // return axios.get("http://localhost:4000/users");
+  return request({url: '/users'})
 };
 
-const addUserData = (hero) => {
-  return axios.post("http://localhost:4000/users", hero);
+const addUserData = (user) => {
+  // return axios.post("http://localhost:4000/users", user);
+  return request({url: '/users', method: 'post', data: user})
 };
 
 export const useUsersData = (onSuccess, onError) => {
