@@ -44,6 +44,16 @@
       "name": "Nguyen Van C",
       "ldap": "nvc",
       "id": 9
+    },
+    {
+      "name": "Nguyen Van D",
+      "ldap": "nvd",
+      "id": 10
+    },
+    {
+      "name": "Nguyen Van E",
+      "ldap": "nve",
+      "id": 11
     }
   ],
   "friends": [

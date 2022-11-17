@@ -6,8 +6,8 @@ const fetchUsers = () => {
 };
 
 const addUserData = (hero) => {
-  return axios.post("http://localhost:4000/users", hero)
-}
+  return axios.post("http://localhost:4000/users", hero);
+};
 
 export const useUsersData = (onSuccess, onError) => {
   return useQuery({
@@ -22,17 +22,39 @@ export const useUsersData = (onSuccess, onError) => {
   });
 };
 
-export const useAddUserData = () =>{
-  const queryClient = useQueryClient()
+export const useAddUserData = () => {
+  const queryClient = useQueryClient();
   return useMutation(addUserData, {
-    onSuccess: (data) => {
-      // queryClient.invalidateQueries('users')
-      queryClient.setQueryData(['users'], (oldQueryData) => {
+    // onSuccess: (data) => {
+    //   // queryClient.invalidateQueries('users')
+    //   queryClient.setQueryData(['users'], (oldQueryData) => {
+    //     return {
+    //       ...oldQueryData,
+    //       data: [...oldQueryData.data, data.data]
+    //     }
+    //   })
+    // }
+    onMutate: async (newUser) => {
+      await queryClient.cancelQueries({ queryKey: ["users"] });
+      const previousUserData = queryClient.getQueryData({ queryKey: "users" });
+      queryClient.setQueryData(["users"], (oldQueryData) => {
         return {
           ...oldQueryData,
-          data: [...oldQueryData.data, data.data]
-        }
-      })
-    }
-  })
-}
+          data: [
+            ...oldQueryData.data,
+            { id: oldQueryData?.data?.length + 1, ...newUser },
+          ],
+        };
+      });
+      return {
+        previousUserData,
+      };
+    },
+    onError: (_error, _hero, context) => {
+      queryClient.setQueryData(["users"], context.previousUserData);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries("users");
+    },
+  });
+};
