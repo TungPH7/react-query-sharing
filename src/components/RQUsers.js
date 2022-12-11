@@ -19,7 +19,7 @@ function RQUsers() {
     onError
   );
 
-  const {mutate: addHero} = useAddUserData()
+  const {mutate: addUser} = useAddUserData()
 
   console.log({
     isLoading,
@@ -35,8 +35,8 @@ function RQUsers() {
   }
 
   const handleAddUser = () => {
-    const hero = {name, ldap}
-    addHero(hero)
+    const user = {name, ldap}
+    addUser(user)
   }
 
   return (

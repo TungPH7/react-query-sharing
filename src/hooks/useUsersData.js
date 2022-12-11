@@ -5,8 +5,8 @@ const fetchUsers = () => {
   return axios.get("http://localhost:4000/users");
 };
 
-const addUserData = (hero) => {
-  return axios.post("http://localhost:4000/users", hero)
+const addUserData = (user) => {
+  return axios.post("http://localhost:4000/users", user)
 }
 
 export const useUsersData = (onSuccess, onError) => {
